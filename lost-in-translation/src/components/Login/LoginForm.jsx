@@ -1,4 +1,10 @@
 import { useForm } from 'react-hook-form'
+import { loginUser } from '../../api/user'
+import { useState, useEffect } from 'react'
+import { storageSave } from '../../utils/storage'
+import { useNavigate } from 'react-router-dom'
+import { useUser } from '../../context/UserContext'
+import { STORAGE_KEY_USER } from '../../const/storageKeys'
 
 const usernameConfig = {
     required: true,
@@ -6,16 +12,38 @@ const usernameConfig = {
 }
 
 const LoginForm = () => {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors }
-    } = useForm()
+    // HOOKS
+    const { register, handleSubmit, formState: { errors } } = useForm()
+    const { user, setUser } = useUser()
+    const navigate = useNavigate()
 
-    const onSubmit = (data) => {
-        console.log(data);
+    // Local State
+    const [loading, setLoading] = useState(false)
+    const [apiError, setApiError] = useState(null)
+
+    // Side Effects
+    useEffect(() => {
+        if (user !== null) {
+            navigate('/profile')
+        }
+        console.log('User has changed!', user);
+    }, [user, navigate]) //Empty dependecies -> only run once
+
+    // Event Handlers
+    const onSubmit = async ({ username }) => {
+        setLoading(true)
+        const [error, userResponse] = await loginUser(username)
+        if (error !== null) {
+            setApiError(error)
+        }
+        if (userResponse !== null) {
+            storageSave(STORAGE_KEY_USER, userResponse)
+            setUser(userResponse)
+        }
+        setLoading(false)
     }
 
+    //Render Functions
     const errorMessage = (() => {
         if (!errors.username) {
             return null
@@ -45,7 +73,9 @@ const LoginForm = () => {
 
                 </fieldset>
 
-                <button type="submit">Continue</button>
+                <button type="submit" disabled={loading} >Continue</button>
+                {loading && <p> Logging in... </p>}
+                {apiError && <p>{apiError}</p>}
             </form>
         </>
     )
