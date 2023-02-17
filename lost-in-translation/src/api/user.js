@@ -12,7 +12,7 @@ const checkForUser = async (username) => {
         return [null, data]
     }
     catch (error) {
-        return [error.message, []] ]
+        return [error.message, []]
 
     }
 }
@@ -43,7 +43,7 @@ const createUser = async (username) => {
 export const loginUser = async (username) => {
     const [checkError, user] = await checkForUser(username)
 
-    if (createError !== null) {
+    if (checkError !== null) {
         return [checkError, null]
     }
 
