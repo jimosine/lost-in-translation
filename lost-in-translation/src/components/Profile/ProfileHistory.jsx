@@ -2,7 +2,8 @@ import ProfileHistoryItem from "./ProfileHistoryItem"
 
 const ProfileHistory = ({ translations }) => {
 
-    const translationsList = translations.map(translation => <ProfileHistoryItem key={translation} translation={translation} />)
+    const translationsList = translations.map(
+        (translation, index) => <ProfileHistoryItem key={translation + '-' + index} translation={translation} />)
 
     return (
         <section>
