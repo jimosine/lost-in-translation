@@ -1,11 +1,22 @@
 import { useForm } from "react-hook-form";
-//import { useUser } from "../../context/UserContext";
+
+import { useState } from "react";
+import TranslationImage from "./TranslationImage";
+
+
 
 const TranslationForm = ({ onTranslation }) => {
   const { register, handleSubmit } = useForm();
+  const [imgUrl, setText] = useState("");
 
   const onSubmit = ({ translationtext }) => {
     onTranslation(translationtext);
+
+    transLation(translationtext);
+  };
+
+  const transLation = (text) => {
+    setText(text);
   };
 
   return (
@@ -20,6 +31,10 @@ const TranslationForm = ({ onTranslation }) => {
         ></input>
         <button type="submit">Translate</button>
       </form>
+
+      <section>
+        <TranslationImage transLationImage={imgUrl}></TranslationImage>
+      </section>
     </>
   );
 };

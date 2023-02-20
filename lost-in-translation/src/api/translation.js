@@ -1,4 +1,4 @@
-import { createHeaders } from "./index";
+import { createHeaders } from ".";
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -17,7 +17,7 @@ export const translationAdd = async (user, translation) => {
     }
 
     const result = await response.json();
-    console.log(...user.translations);
+
     return [null, result];
   } catch (error) {
     return [error.message, null];
