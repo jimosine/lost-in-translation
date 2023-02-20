@@ -5,6 +5,7 @@ import { useUser } from "../context/UserContext"
 import withAuth from "../hoc/withAuth"
 
 const Profile = () => {
+
     const { user } = useUser()
 
     return (
