@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
+
 import { useState } from "react";
 import TranslationImage from "./TranslationImage";
 
-// import { useRef } from "react";
-// import { useUser } from "../../context/UserContext";
+
 
 const TranslationForm = ({ onTranslation }) => {
   const { register, handleSubmit } = useForm();
