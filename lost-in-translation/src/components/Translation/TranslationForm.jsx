@@ -1,18 +1,19 @@
 import { useForm } from "react-hook-form";
 
-import { useState } from "react";
+import { useContext } from "react";
 import TranslationImage from "./TranslationImage";
-
-
+import { ImageContext } from "../../context/ImageProvider";
 
 const TranslationForm = ({ onTranslation }) => {
-  const { register, handleSubmit } = useForm();
-  const [imgUrl, setText] = useState("");
+  const { register, handleSubmit, reset } = useForm();
 
-  const onSubmit = ({ translationtext }) => {
+  const [imgUrl, setText] = useContext(ImageContext);
+  // const [imgUrl, setText] = useState("");
+
+  const onSubmit = ({ translationtext, e }) => {
     onTranslation(translationtext);
-
     transLation(translationtext);
+    reset();
   };
 
   const transLation = (text) => {
