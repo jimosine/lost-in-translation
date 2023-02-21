@@ -1,12 +1,17 @@
+import { useContext } from "react";
 import { translationAdd } from "../api/translation";
 import TranslationCard from "../components/Translation/TranslationCard";
 import TranslationForm from "../components/Translation/TranslationForm";
+import { ImageContext } from "../context/ImageProvider";
 import { useUser } from "../context/UserContext";
 import withAuth from "../hoc/withAuth";
+
 // import { storageSave } from "../utils/storage";
 
 const Translations = () => {
   const { user, setUser } = useUser();
+  const [imgUrl, setText] = useContext(ImageContext);
+  // setText("");
 
   const handleTranslationClicked = async (translation) => {
     // check if you have translation
@@ -24,7 +29,7 @@ const Translations = () => {
     <>
       <h1>Translation</h1>
       <TranslationForm onTranslation={handleTranslationClicked} />
-      <TranslationCard></TranslationCard>
+      <TranslationCard transLationImage={imgUrl}></TranslationCard>
     </>
   );
 };
