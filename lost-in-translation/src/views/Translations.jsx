@@ -1,4 +1,5 @@
 import { translationAdd } from "../api/translation";
+import TranslationCard from "../components/Translation/TranslationCard";
 import TranslationForm from "../components/Translation/TranslationForm";
 import { useUser } from "../context/UserContext";
 import withAuth from "../hoc/withAuth";
@@ -23,6 +24,7 @@ const Translations = () => {
     <>
       <h1>Translation</h1>
       <TranslationForm onTranslation={handleTranslationClicked} />
+      <TranslationCard></TranslationCard>
     </>
   );
 };
