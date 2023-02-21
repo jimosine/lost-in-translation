@@ -21,20 +21,18 @@ const ProfileActions = () => {
         }
         const [clearError] = await translationClearHistory(user.id)
 
-        //DIT NOG EVEN FIXEN
+        if (clearError !== null) {
+            //do something about this
+            console.log("clearHistory error: " + clearError);
+            return
+        }
+
         const updatedUser = {
             ...user,
             translations: []
         }
-
         setUser(updatedUser)
         storageSave(STORAGE_KEY_USER, updatedUser)
-
-        if (!clearError !== null) {
-            //do something about this
-            console.log(clearError);
-            return
-        }
 
 
     }
