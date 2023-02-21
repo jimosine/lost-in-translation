@@ -33,7 +33,7 @@ export const translationClearHistory = async (userId) => {
         translations: [],
       }),
     })
-    console.log(response);
+
     if (!response.ok) {
       throw new Error("Could not update translations")
     }
