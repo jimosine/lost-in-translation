@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 
 import { useContext } from "react";
-import TranslationImage from "./TranslationImage";
+
 import { ImageContext } from "../../context/ImageProvider";
 
 const TranslationForm = ({ onTranslation }) => {
@@ -10,7 +10,7 @@ const TranslationForm = ({ onTranslation }) => {
   const [imgUrl, setText] = useContext(ImageContext);
   // const [imgUrl, setText] = useState("");
 
-  const onSubmit = ({ translationtext, e }) => {
+  const onSubmit = ({ translationtext }) => {
     onTranslation(translationtext);
     transLation(translationtext);
     reset();
@@ -32,10 +32,6 @@ const TranslationForm = ({ onTranslation }) => {
         ></input>
         <button type="submit">Translate</button>
       </form>
-
-      <section>
-        <TranslationImage transLationImage={imgUrl}></TranslationImage>
-      </section>
     </>
   );
 };
