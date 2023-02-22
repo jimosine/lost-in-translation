@@ -1,6 +1,5 @@
 import ProfileHistoryItem from "./ProfileHistoryItem"
 
-import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 
@@ -13,13 +12,10 @@ const ProfileHistory = ({ translations }) => {
 
     return (
         <section>
-            <h4>Your translation history</h4>
+            <h4>Your translation history: </h4>
             <ListGroup as="ol" numbered>
                 {translationsList}
             </ListGroup>
-            {/* <ul>
-                {translationsList}
-            </ul> */}
         </section>
     )
 }

@@ -1,6 +1,6 @@
 .navbar {
   font-family: "Poppins", sans-serif;
-  background-color: #91a8c9;
+  background: linear-gradient(to right, #718DB8, #92A8C8);
 }
 
 *,
@@ -27,12 +27,12 @@
   border-radius: 50%;
 }
 .shape:first-child {
-  background: linear-gradient(#1845ad, #23a2f6);
+  background: linear-gradient(#718DB8, #92A8C8);
   left: -80px;
   top: -80px;
 }
 .shape:last-child {
-  background: linear-gradient(to right, #ff512f, #f09819);
+  background: linear-gradient(to right, #FA9D7B, #F98A62);
   right: -30px;
   bottom: -80px;
 }
@@ -62,11 +62,36 @@
 .login-button {
   margin-top: 50px;
   width: 100%;
-  background-color: #cfadad;
+  background: linear-gradient(#718DB8, #92A8C8);
   color: #080710;
   padding: 15px 0;
   font-size: 18px;
   font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.clear-history-button {
+  font-family: "Poppins", sans-serif;
+  margin-top: 20px;
+  width: 100%;
+  background-color: #718DB8;
+  color: #000000;
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-button {
+  font-family: "Poppins", sans-serif;
+  background-color: #718DB8;
+  margin-top: 20px;
+  padding: 10px 0;
+  color: #080710;
+  font-size: 18px;
+  font-weight: 400;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -118,4 +143,17 @@
 .btn-customFooter {
   background-color: whitesmoke !important;
   color: black !important;
+}
+
+.profile-header {
+  height: 200px;
+  width: 400px;
+  background-color: #FA9D7B;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 60px 35px;
+  margin-bottom: 40px;
+
 }

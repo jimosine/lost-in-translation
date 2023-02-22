@@ -60,10 +60,6 @@ const LoginForm = () => {
     return (
 
         <>
-            <div className="background">
-                <div className="shape"></div>
-                <div className="shape"></div>
-            </div>
             <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
                 <h3>Login Here</h3>
                 <fieldset>
