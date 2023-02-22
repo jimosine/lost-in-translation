@@ -6,10 +6,6 @@ import { useNavigate } from 'react-router-dom'
 import { useUser } from '../../context/UserContext'
 import { STORAGE_KEY_USER } from '../../const/storageKeys'
 
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
-
 const usernameConfig = {
     required: true,
     minLength: 3
@@ -30,7 +26,6 @@ const LoginForm = () => {
         if (user !== null) {
             navigate('/profile')
         }
-        console.log('User has changed!', user);
     }, [user, navigate]) //Empty dependecies -> only run once
 
     // Event Handlers
@@ -63,23 +58,17 @@ const LoginForm = () => {
     })()
 
     return (
+
         <>
-            <InputGroup className="mb-3">
-                <Form.Control onSubmit={handleSubmit(onSubmit)}
-                    type="text"
-                    {...register("username", usernameConfig)}
-                    placeholder="Recipient's username"
-                    aria-label="Recipient's username"
-                    aria-describedby="basic-addon2"
-                />
-                <Button type="submit" disabled={loading} variant="outline-secondary" id="button-addon2">
-                    Continue
-        </Button>
-            </InputGroup>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="background">
+                <div className="shape"></div>
+                <div className="shape"></div>
+            </div>
+            <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
+                <h3>Login Here</h3>
                 <fieldset>
-                    <label htmlFor="username"></label>
-                    <input
+                    <label className="login-label" htmlFor="username">Username</label>
+                    <input className="login-input"
                         type="text"
                         placeholder="What's your name?"
                         {...register("username", usernameConfig)}
@@ -88,7 +77,7 @@ const LoginForm = () => {
 
                 </fieldset>
 
-                <button type="submit" disabled={loading} >Continue</button>
+                <button className="login-button" type="submit" disabled={loading} >Continue</button>
                 {loading && <p> Logging in... </p>}
                 {apiError && <p>{apiError}</p>}
             </form>
