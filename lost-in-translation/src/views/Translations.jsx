@@ -12,10 +12,17 @@ import withAuth from "../hoc/withAuth";
 const Translations = () => {
   const { user, setUser } = useUser();
   const [imgUrl, setText] = useContext(ImageContext);
+<<<<<<< Updated upstream
   
     useEffect(() => {
         setText('');
     }, []);
+=======
+
+  useEffect(() => {
+    setText("");
+  }, []);
+>>>>>>> Stashed changes
 
   const handleTranslationClicked = async (translation) => {
     // check if you have translation
@@ -31,10 +38,15 @@ const Translations = () => {
 
   return (
     <>
+<<<<<<< Updated upstream
       <h1>Translation</h1>
       <TranslationForm onTranslation={handleTranslationClicked} />
       <TranslationCard transLationImage={imgUrl}></TranslationCard>
       <button onClick={() => setText("")}>Reset translation</button>
+=======
+      <TranslationForm onTranslation={handleTranslationClicked} />
+      <TranslationCard transLationImage={imgUrl}></TranslationCard>
+>>>>>>> Stashed changes
     </>
   );
 };
