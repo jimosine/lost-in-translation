@@ -15,8 +15,8 @@ const NavBar = () => {
                 <Navbar.Brand >Lost in translations</Navbar.Brand>
                 {user !== null &&
                     <Nav className="me-auto">
-                        <Nav.Link > {' '} <Link className="text-decoration-none text-white" to="/translations"> Translations </Link></Nav.Link>
-                        <Nav.Link > {' '} <Link className="text-decoration-none text-white" to="/profile"> Profile </Link></Nav.Link>
+                        <Nav.Link > <Link className="text-decoration-none text-white" to="/translations"> Translations </Link></Nav.Link>
+                        <Nav.Link > <Link className="text-decoration-none text-white" to="/profile"> Profile </Link></Nav.Link>
                     </Nav>
                 }
             </Container>
