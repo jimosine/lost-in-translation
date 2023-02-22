@@ -8,33 +8,31 @@ import { useUser } from "../context/UserContext";
 import withAuth from "../hoc/withAuth";
 
 const Translations = () => {
-    const { user, setUser } = useUser();
-    const [imgUrl, setText] = useContext(ImageContext);
+  const { user, setUser } = useUser();
+  const [imgUrl, setText] = useContext(ImageContext);
 
-    useEffect(() => {
-        setText('');
-    }, []);
+  useEffect(() => {
+    setText("");
+  }, []);
 
-    const handleTranslationClicked = async (translation) => {
-        // check if you have translation
-        // send an http request with the translationtext
+  const handleTranslationClicked = async (translation) => {
+    // check if you have translation
+    // send an http request with the translationtext
 
-        const [error, result] = await translationAdd(user, translation);
+    const [error, result] = await translationAdd(user, translation);
 
-        console.log("Error: ", error);
-        console.log("Result", result);
-        // console.log("handleTranslationClicked", user, translation);
-        setUser(result);
-    };
+    console.log("Error: ", error);
+    console.log("Result", result);
+    // console.log("handleTranslationClicked", user, translation);
+    setUser(result);
+  };
 
-    return (
-        <>
-            <h1>Translation</h1>
-            <TranslationForm onTranslation={handleTranslationClicked} />
-            <TranslationCard transLationImage={imgUrl}></TranslationCard>
-            <button onClick={() => setText("")}>Reset translation</button>
-        </>
-    );
+  return (
+    <>
+      <TranslationForm onTranslation={handleTranslationClicked} />
+      <TranslationCard transLationImage={imgUrl}></TranslationCard>
+    </>
+  );
 };
 
 export default withAuth(Translations);
