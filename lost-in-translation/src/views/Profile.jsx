@@ -10,10 +10,18 @@ const Profile = () => {
 
     return (
         <>
-            <h1>Profile</h1>
-            <ProfileHeader username={user.username} />
-            <ProfileActions />
-            <ProfileHistory translations={user.translations} />
+            <div class="container">
+                <div class="row mt-5">
+                    <ProfileHeader username={user.username} />
+                    <div class="col-md-6">
+                        <ProfileHistory translations={user.translations} />
+
+                    </div>
+                    <div class="col-md-6">
+                        <ProfileActions />
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
