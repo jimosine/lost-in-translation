@@ -6,6 +6,10 @@ import { useNavigate } from 'react-router-dom'
 import { useUser } from '../../context/UserContext'
 import { STORAGE_KEY_USER } from '../../const/storageKeys'
 
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+
 const usernameConfig = {
     required: true,
     minLength: 3
@@ -60,13 +64,24 @@ const LoginForm = () => {
 
     return (
         <>
-            <h2> What's your name?</h2>
+            <InputGroup className="mb-3">
+                <Form.Control onSubmit={handleSubmit(onSubmit)}
+                    type="text"
+                    {...register("username", usernameConfig)}
+                    placeholder="Recipient's username"
+                    aria-label="Recipient's username"
+                    aria-describedby="basic-addon2"
+                />
+                <Button type="submit" disabled={loading} variant="outline-secondary" id="button-addon2">
+                    Continue
+        </Button>
+            </InputGroup>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <fieldset>
-                    <label htmlFor="username"> Username: </label>
+                    <label htmlFor="username"></label>
                     <input
                         type="text"
-                        placeholder="Username"
+                        placeholder="What's your name?"
                         {...register("username", usernameConfig)}
                     />
                     {errorMessage}
