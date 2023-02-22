@@ -12,7 +12,6 @@ const ProfileActions = () => {
     const { user, setUser } = useUser()
 
     const handleLogoutClick = () => {
-        console.log("yo");
         if (window.confirm('Are you sure?')) {
             storageDelete(STORAGE_KEY_USER)
             setUser(null)

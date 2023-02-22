@@ -27,12 +27,12 @@
   border-radius: 50%;
 }
 .shape:first-child {
-  background: linear-gradient(#718DB8, #92A8C8);
+  background: linear-gradient(#718DB8, #CCD6E5);
   left: -80px;
   top: -80px;
 }
 .shape:last-child {
-  background: linear-gradient(to right, #FA9D7B, #F98A62);
+  background: linear-gradient(to right, #FCC7B3,  #FA9D7B);
   right: -30px;
   bottom: -80px;
 }
@@ -76,12 +76,19 @@
   margin-top: 20px;
   width: 100%;
   background-color: #718DB8;
-  color: #000000;
+  color: #080710;
   padding: 10px 0;
   font-size: 18px;
   font-weight: 400;
   border-radius: 5px;
   cursor: pointer;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 20px rgba(8, 7, 16, 0.6);
+}
+
+.clear-history-button:hover {
+  background-color: #FA9D7B;
 }
 
 .logout-button {
@@ -94,7 +101,15 @@
   font-weight: 400;
   border-radius: 5px;
   cursor: pointer;
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 20px rgba(8, 7, 16, 0.6);
 }
+
+.logout-button:hover {
+  background-color: #FA9D7B; 
+}
+
 
 .login-form {
   height: 520px;
@@ -111,7 +126,6 @@
   padding: 50px 35px;
 }
 
-/* Dit is de login form text: Login here */
 .login-form * {
   font-family: "Poppins", sans-serif;
   color: black;
