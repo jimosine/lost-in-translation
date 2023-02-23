@@ -29,6 +29,8 @@ const TranslationForm = ({ onTranslation }) => {
             Translationtext:
           </InputGroup.Text>
           <Form.Control
+            pattern="[a-zA-Z ]+"
+            title="Do not use special characters and numbers"
             type="text"
             placeholder="Type your text"
             {...register("translationtext")}

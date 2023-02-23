@@ -142,21 +142,21 @@
 }
 
 .btn-custom {
-  background-color: blueviolet !important;
+  background-color: #718db8 !important;
   color: azure !important;
 }
 .customform {
   height: 200px;
-  background-color: goldenrod;
+  background-color: #fa9d7b;
 }
 
 .card-footer {
-  background-color: blueviolet !important;
+  background-color: #fa9d7b !important;
 }
 
 .btn-customFooter {
-  background-color: whitesmoke !important;
-  color: black !important;
+  background-color: #718db8 !important;
+  color: azure !important;
 }
 
 .profile-header {
