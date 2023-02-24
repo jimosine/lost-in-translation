@@ -20,7 +20,11 @@ You can also run this application on your own machine by following these steps:
 
 1. Clone the lost-in-translation repository
 
-2. Add API credentials to the .env file. Either contact @jimosine or setup your own server
+
+2. Add API credentials to the .env file. 
+
+Add the endpoint mentioned in Usage to a variable called `REACT_APP_API_URL`
+For the key, contact @jimosine and add to `REACT_APP_API_KEY`
 
 3. Run `npm install` while in the correct directory to install all the required dependencies.
 
