@@ -14,7 +14,7 @@ export const translationAdd = async (user, translation) => {
         translations: [...user.translations, translation],
       }),
     });
-    console.log(response);
+
     if (!response.ok) {
       throw new Error("Could not update the translation");
     }
