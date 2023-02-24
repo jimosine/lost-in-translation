@@ -1,6 +1,10 @@
 # Lost in Translation
 
-Lost in Translation is a web application where users can translate English text to American sign language. After logging in with a username, the user is greeted on their profile page which shows their 10 most recent translations and action buttons to logout or clear their history. On the translations page, the user can type words or short sentences, and after continuing is responded with images which correspond to the sign language translation of the text.
+Lost in Translation is a web application where users can translate English text to American sign language. 
+
+After logging in with a username, the user is greeted on their profile page which shows their 10 most recent translations and action buttons to logout or clear their history. 
+
+On the translations page, the user can type words or short sentences, and after continuing is responded with images which correspond to the sign language translation of the text.
 
 
 ## Usage
@@ -14,14 +18,22 @@ If you want to see the data that is stored, the endpoint for our API is: https:/
 
 You can also run this application on your own machine by following these steps:
 
-```
-```
+1. Clone the lost-in-translation repository
+
+2. Add API credentials to the .env file. Either contact @jimosine or setup your own server
+
+3. Run `npm install` while in the correct directory to install all the required dependencies.
+
+4. Run `npm start` in the same directory to start the application. 
+You can now access the application at http://localhost:3000 in your favorite browser
+
+5. Stop the app by typing `CTRL + C` in the terminal.
 
 ## Built With
 
 • Visual Studio Code
 
-• React
+• React (create-react-app / react-router-dom / react-bootstrap)
 
 • Javascript
 
