@@ -1,7 +1,10 @@
+// Import required modules and dependencies
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Row, Col } from 'react-bootstrap';
 
+//This component creates a header for the profile page which returns the user's name
+//provided as the prop. It also gives a description of the page's content and is
+//built using Bootstrap components
 const ProfileHeader = ({ username }) => {
     return (
         <header>
@@ -17,4 +20,5 @@ const ProfileHeader = ({ username }) => {
     )
 }
 
+// Export the component
 export default ProfileHeader

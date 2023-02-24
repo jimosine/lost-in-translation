@@ -2,10 +2,12 @@ import { useContext, useEffect } from "react";
 import { translationAdd } from "../api/translation";
 import TranslationCard from "../components/Translation/TranslationCard";
 import TranslationForm from "../components/Translation/TranslationForm";
+import { STORAGE_KEY_USER } from "../const/storageKeys";
 
 import { ImageContext } from "../context/ImageProvider";
 import { useUser } from "../context/UserContext";
 import withAuth from "../hoc/withAuth";
+import { storageSave } from "../utils/storage";
 
 // The translationPage to translate your text //
 // It has two components: first the translationForm and the translationCard //
@@ -13,10 +15,15 @@ const Translations = () => {
   const { user, setUser } = useUser();
   const [imgUrl, setText] = useContext(ImageContext);
 
-  // Reset the setText stage when you come back to the page //
+  // Reset the setText state when you come back to the page //
   useEffect(() => {
-    setText("");
-  }, []);
+    setText("")
+  }, [])
+
+  //Stores the user state to the api everytime the user state is changed
+  useEffect(() => {
+    storageSave(STORAGE_KEY_USER, user)
+  }, [user])
 
   const handleTranslationClicked = async (translation) => {
     // check if you have translation
