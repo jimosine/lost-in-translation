@@ -30,9 +30,6 @@ const Translations = () => {
     // send an http request with the translationtext
     const [error, result] = await translationAdd(user, translation);
 
-    console.log("Error: ", error);
-    console.log("Result", result);
-
     // Add the result to the user to update the userState //
     setUser(result);
   };
