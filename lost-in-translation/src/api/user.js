@@ -52,6 +52,10 @@ const createUser = async (username) => {
 
 // Define a function to log in a user
 export const loginUser = async (username) => {
+    if (!apiUrl) {
+        return ["Could not complete request.", null]
+    }
+
     const [checkError, user] = await checkForUser(username)
 
     if (checkError !== null) {
