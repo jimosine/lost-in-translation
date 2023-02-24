@@ -25,7 +25,7 @@ You can also run this application on your own machine by following these steps:
 
 • Javascript
 
-• HTML + CSS + Bootstrap
+• HTML + CSS + (React-)Bootstrap
 
 
 ## Contributing
