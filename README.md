@@ -32,11 +32,20 @@ You can also run this application on your own machine by following these steps:
 
 Jim Buissink @jimosine & Marco Beckers @marcob93
 
+## Acknowledgments
+
+Inspiration for the login page taken from:
+
+https://foolishdeveloper.com/
 
 ## License
 
 This project is licensed under the MIT License.
 
-
 ## Note
-This is a student project and it should not be used as a production-ready software.
+
+• Color palette for this applications: https://coolors.co/91a8c9-718db8-fa9d7b
+
+• This is a student project and it should not be used as a production-ready software.
+
+
